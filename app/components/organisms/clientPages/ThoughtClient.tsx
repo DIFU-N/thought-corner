@@ -57,15 +57,15 @@ const ThoughtClient = () => {
             </div>
             <div className="flex justify-between">
               <div>
-                {/* {isAuthenticated ? (
+                {isAuthenticated ? (
                   <button
                     className="border border-black p-2 text-xs"
                     onClick={() => toMore()}
                   >
                     add more +
                   </button>
-                ) : null} */}
-                <button onClick={toMore}>add more +</button>
+                ) : null}
+                {/* <button onClick={toMore}>add more +</button> */}
               </div>
             </div>
           </div>
