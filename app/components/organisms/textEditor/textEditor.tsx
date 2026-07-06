@@ -111,7 +111,7 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
       </div>
 
       {/* Editor */}
-      <EditorContent editor={editor} className="text-white bg-black " />
+      <EditorContent editor={editor} className="text-white bg-black m-4" />
     </div>
   );
 };
