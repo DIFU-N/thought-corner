@@ -42,7 +42,7 @@ export default function ThoughtPage() {
     }
   }, [id]);
 
-  if (loading) return <LoadingPage />;
+  // if (loading) return <LoadingPage />;
   if (!thought) return <p>No thought found.</p>;
 
   const date = new Date(thought.date);
