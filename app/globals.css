@@ -56,6 +56,7 @@ body {
   font-weight: 600;
 }
 
+
 .prose-thought .ProseMirror {
   min-height: 500px;
   background-color: white;
@@ -68,6 +69,10 @@ body {
   text-align: justify;
 }
 
+.dark .prose-thought .ProseMirror {
+  background-color: black;
+  color: white;
+}
 /* .tiptap {
   :first-child {
     margin-top: 0;
