@@ -79,7 +79,7 @@ export default function ThoughtPage() {
 
         <div className="prose prose-thought">
           {editor ? (
-            <EditorContent editor={editor} className="bg-white" />
+            <EditorContent editor={editor} className="bg-white dark:bg-black text-white" />
           ) : (
             <p>Loading editor...</p>
           )}

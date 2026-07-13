@@ -139,7 +139,7 @@ export default function StackPush() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
-                  className="object-contain"
+                  className="object-contain dark:drop-shadow-[0_0_3px_white]"
                 />
               </motion.div>
               <motion.div
