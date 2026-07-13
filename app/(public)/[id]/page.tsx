@@ -8,7 +8,8 @@ import { getThought } from "@/app/utils/services/api";
 import { Thought } from "@/app/utils/types/thoughts";
 import Link from "next/link";
 import LoadingPage from "@/app/components/organisms/LoadingPage";
-import Youtube from '@tiptap/extension-youtube'
+import Youtube from "@tiptap/extension-youtube";
+import ThemeToggle from "@/app/components/molecules/themetoggle/ThemeToggle";
 
 export default function ThoughtPage() {
   const params = useParams();
@@ -20,11 +21,12 @@ export default function ThoughtPage() {
   // Initialize editor only **after thought is loaded**
   const editor = useEditor(
     {
-      extensions: [StarterKit, 
+      extensions: [
+        StarterKit,
         Youtube.configure({
           controls: true,
           nocookie: true,
-        })
+        }),
       ],
       content: thought?.body ?? "",
       editable: false,
@@ -32,7 +34,6 @@ export default function ThoughtPage() {
     },
     [thought],
   );
-
 
   useEffect(() => {
     if (id) {
@@ -49,6 +50,9 @@ export default function ThoughtPage() {
 
   return (
     <div className="min-h-screen justify-center w-full max-w-full bg-white dark:bg-black dark:text-white pt-32 px-[10%] md:px-[20%]">
+      <div>
+        <ThemeToggle />
+      </div>
       <div className="flex justify-between">
         <div className="mx-5 flex flex-col gap-2 mb-6">
           <h1 className="text-4xl md:text-6xl font-serif">{thought.title}</h1>
@@ -64,7 +68,7 @@ export default function ThoughtPage() {
 
         <Link
           href={`/addthought?id=${thought.id}`}
-          className="px-4 py-2 bg-black mt-4 h-8 text-xs text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-black dark:border dark:border-white mt-4 h-8 text-xs text-white rounded hover:bg-blue-700"
         >
           Edit
         </Link>

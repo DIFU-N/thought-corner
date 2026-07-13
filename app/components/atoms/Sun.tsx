@@ -9,7 +9,6 @@ const Sun = () => (
       x="0px"
       y="0px"
       viewBox="0 0 496 496"
-      style={{ enableBackground: 'new 0 0 496 496' }}
       xmlSpace="preserve"
     >
       <rect
