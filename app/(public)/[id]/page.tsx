@@ -49,37 +49,41 @@ export default function ThoughtPage() {
   const date = new Date(thought.date);
 
   return (
-    <div className="min-h-screen justify-center w-full max-w-full bg-white dark:bg-black dark:text-white pt-32 px-[10%] md:px-[20%]">
-      <div>
-        <ThemeToggle />
-      </div>
-      <div className="flex justify-between">
-        <div className="mx-5 flex flex-col gap-2 mb-6">
-          <h1 className="text-4xl md:text-6xl font-serif">{thought.title}</h1>
-          <p className="text-md font-serif text-gray-500">{thought.subtitle}</p>
-          <p className="text-xs font-serif text-gray-500">
-            {date.toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
+    <div className="min-h-screen w-full max-w-full bg-white dark:bg-black">
+        <div className="p-4 flex justify-end w-full">
+          <ThemeToggle />
+        </div>
+      <div className="justify-center w-full max-w-full dark:text-white pt-32 px-[10%] md:px-[20%]">
+        <div className="flex justify-between">
+          <div className="mx-5 flex flex-col gap-2 mb-6">
+            <h1 className="text-4xl md:text-6xl font-serif">{thought.title}</h1>
+            <p className="text-md font-serif text-gray-500">
+              {thought.subtitle}
+            </p>
+            <p className="text-xs font-serif text-gray-500">
+              {date.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          </div>
+
+          <Link
+            href={`/addthought?id=${thought.id}`}
+            className="px-4 py-2 bg-black dark:border dark:border-white mt-4 h-8 text-xs text-white rounded hover:bg-blue-700"
+          >
+            Edit
+          </Link>
         </div>
 
-        <Link
-          href={`/addthought?id=${thought.id}`}
-          className="px-4 py-2 bg-black dark:border dark:border-white mt-4 h-8 text-xs text-white rounded hover:bg-blue-700"
-        >
-          Edit
-        </Link>
-      </div>
-
-      <div className="prose prose-thought">
-        {editor ? (
-          <EditorContent editor={editor} className="bg-white" />
-        ) : (
-          <p>Loading editor...</p>
-        )}
+        <div className="prose prose-thought">
+          {editor ? (
+            <EditorContent editor={editor} className="bg-white" />
+          ) : (
+            <p>Loading editor...</p>
+          )}
+        </div>
       </div>
     </div>
   );
