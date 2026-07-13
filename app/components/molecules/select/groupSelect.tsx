@@ -73,7 +73,7 @@ const GroupSelect: React.FC<Props> = ({
         }}
         onFocus={() => setOpen(true)}
         placeholder={placeholder}
-        className="w-full p-2 text-sm focus:outline-none focus:ring-0 bg-transparent"
+        className="w-full p-2 text-sm focus:outline-none focus:ring-0 bg-transparent dark:bg-gray-500"
       />
 
       {meta.error && <p className="text-sm text-red-500">{meta.error}</p>}

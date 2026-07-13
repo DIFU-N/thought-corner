@@ -1,13 +1,13 @@
 "use client";
 import Youtube from "@tiptap/extension-youtube";
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, Content, JSONContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Plugin } from "prosemirror-state";
 import React from "react";
 
 type Props = {
-  value: any;
-  onChange: (content: any) => void;
+  value: JSONContent;
+  onChange: (content: JSONContent) => void;
 };
 
 const YoutubeWithPaste = Youtube.extend({
@@ -41,8 +41,8 @@ const YoutubeWithPaste = Youtube.extend({
 });
 
 const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
-  const [height, setHeight] = React.useState(480);
-  const [width, setWidth] = React.useState(640);
+  // const [height, setHeight] = React.useState(480);
+  // const [width, setWidth] = React.useState(640);
 
   const editor = useEditor({
     extensions: [
@@ -61,17 +61,17 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
 
   if (!editor) return null;
 
-  const addYoutubeVideo = () => {
-    const url = prompt("Enter YouTube URL");
+  // const addYoutubeVideo = () => {
+  //   const url = prompt("Enter YouTube URL");
 
-    if (url) {
-      editor!.commands.setYoutubeVideo({
-        src: url,
-        width: 500,
-        height: 350,
-      });
-    }
-  };
+  //   if (url) {
+  //     editor!.commands.setYoutubeVideo({
+  //       src: url,
+  //       width: 500,
+  //       height: 350,
+  //     });
+  //   }
+  // };
 
   return (
     <div
@@ -83,14 +83,14 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={editor.isActive("bold") ? "bg-gray-300" : ""}
+          className={editor.isActive("bold") ? "bg-gray-300 dark:bg-black p-1" : ""}
         >
           Bold
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={editor.isActive("italic") ? "bg-gray-300" : ""}
+          className={editor.isActive("italic") ? "bg-gray-300 dark:bg-black p-1" : ""}
         >
           Italics
         </button>
@@ -100,7 +100,7 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
             editor.chain().focus().toggleHeading({ level: 1 }).run()
           }
           className={
-            editor.isActive("heading", { level: 1 }) ? "bg-gray-300" : ""
+            editor.isActive("heading", { level: 1 }) ? "bg-gray-300 dark:bg-black p-1" : ""
           }
         >
           H1
@@ -111,7 +111,7 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
       </div>
 
       {/* Editor */}
-      <EditorContent editor={editor} className="text-white bg-black m-4 p-2" />
+      <EditorContent editor={editor} className="text-white dark:border-white dark:border-2 bg-black m-4 p-2" />
     </div>
   );
 };

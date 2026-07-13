@@ -6,6 +6,7 @@ import { useAppDispatch } from "@/app/hooks/dispatch";
 import { useEffect } from "react";
 import { checkAuth } from "@/app/redux/thunks/authThunks";
 import { readThoughts } from "@/app/redux/thunks/thoughtThunks";
+import { ThemeProvider } from "next-themes";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,11 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <AuthBootstrap>{children}</AuthBootstrap>
+        <AuthBootstrap>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
+        </AuthBootstrap>
       </QueryClientProvider>
     </Provider>
   );

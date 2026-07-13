@@ -27,7 +27,7 @@ export default function StackPush() {
   }, []);
 
   return (
-    <div className="flex gap-8 p-5 h-[24*3] items-center">
+    <div className="flex gap-8 p-5 h-[24*3] items-center dark:text-white">
       {/* LEFT STACK */}
       <div className="flex flex-col">
         <motion.div layout className="w-14 h-11 ml-10 rounded-xl relative">
@@ -99,7 +99,7 @@ export default function StackPush() {
                   src={`/assets/mmys.png`}
                   alt={"mmys"}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 368px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                   className="object-contain"
                 />

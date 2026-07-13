@@ -1,5 +1,6 @@
 "use client";
 
+import ThemeToggle from "@/app/components/molecules/themetoggle/ThemeToggle";
 import AddThoughtForm from "@/app/components/organisms/forms/AddThoughtForm";
 import { getThought } from "@/app/utils/services/api";
 import { Thought } from "@/app/utils/types/thoughts";
@@ -19,8 +20,13 @@ const AddThoughtsClient = () => {
   }, [id]);
 
   return (
-    <div className="min-h-screen flex justify-center w-full max-w-full bg-white pt-20 lg:pt-32 px-[10%] md:px-[12%]">
-      <AddThoughtForm thought={thought} />
+    <div className="min-h-screen dark:bg-black">
+      <div className="p-4 flex justify-end w-full">
+        <ThemeToggle />
+      </div>
+      <div className="justify-center flex w-full max-w-full pt-20 lg:pt-32 px-[10%] md:px-[12%]">
+        <AddThoughtForm thought={thought} />
+      </div>
     </div>
   );
 };

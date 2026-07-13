@@ -42,13 +42,13 @@ export default function ThoughtPage() {
     }
   }, [id]);
 
-  // if (loading) return <LoadingPage />;
+  if (loading) return <LoadingPage />;
   if (!thought) return <p>No thought found.</p>;
 
   const date = new Date(thought.date);
 
   return (
-    <div className="min-h-screen justify-center w-full max-w-full bg-white pt-32 px-[10%] md:px-[20%]">
+    <div className="min-h-screen justify-center w-full max-w-full bg-white dark:bg-black dark:text-white pt-32 px-[10%] md:px-[20%]">
       <div className="flex justify-between">
         <div className="mx-5 flex flex-col gap-2 mb-6">
           <h1 className="text-4xl md:text-6xl font-serif">{thought.title}</h1>

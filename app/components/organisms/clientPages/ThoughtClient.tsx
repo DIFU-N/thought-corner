@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { Group } from "@/app/utils/types/thoughts";
 import { getAllGroups } from "@/app/utils/services/api";
+import ThemeToggle from "../../molecules/themetoggle/ThemeToggle";
 
 const ThoughtClient = () => {
   const { thoughts } = useAppSelector((state) => state.thought);
@@ -26,7 +27,6 @@ const ThoughtClient = () => {
     };
     fetchGroups();
   }, []);
-  console.log("okay", groups);
 
   const options = groups.map((group) => ({
     value: group.name,
@@ -43,14 +43,17 @@ const ThoughtClient = () => {
   };
   return (
     <PageTransition>
-      <div className="min-h-screen flex justify-center w-full max-w-full bg-white py-5 md:pt-10 px-[10%] md:px-[12%]">
+      <div className="min-h-screen flex justify-center w-full max-w-full bg-white dark:bg-black py-5 md:pt-10 px-[10%] md:px-[12%]">
         <div className="w-[90%] lg:w-[70%]">
           <div className="mb-4 flex flex-col gap-1">
-            <div className="text-2xl lg:text-6xl font-serif flex gap-1 bg-gray-400 py-5 px-4 rounded-t-md">
-              Thought
-              <div className="text-4xl lg:text-6xl font-serif text-white">
-                Corner
+            <div className="text-2xl lg:text-6xl font-serif flex justify-between items-center bg-gray-400 py-5 px-4 rounded-t-md">
+              <div className="text-2xl lg:text-6xl font-serif flex gap-1 rounded-t-md">
+                Thought
+                <div className="text-4xl lg:text-6xl font-serif text-white">
+                  Corner
+                </div>
               </div>
+              <ThemeToggle />
             </div>
             <div>
               <StackPush />

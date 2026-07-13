@@ -9,7 +9,7 @@ const ThoughtCard: React.FC<props> = ({ thought }) => {
   const date = new Date(thought.date);
 
   return (
-    <div className="flex flex-col border-y-2 gap-2 border-gray-400 p-3 text-black font-thin cursor-pointer hover:bg-[#f2c323]">
+    <div className="flex flex-col border-y-2 gap-2 border-gray-400 dark:text-white p-3 text-black font-thin cursor-pointer hover:bg-[#f2c323]">
       <div className="flex justify-between">
         <div className="uppercase text-sm">{thought.group}</div>
         <div className="text-sm">

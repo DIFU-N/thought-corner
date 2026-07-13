@@ -83,18 +83,18 @@ const AddThoughtForm: React.FC<Props> = ({ thought }) => {
       validateOnChange={false}
     >
       {({ errors }) => (
-        <Form className="w-full flex px-2 flex-col pt-3 pb-8 max-w-xl md:max-w-3xl bg-transparent drop-shadow-lg rounded-xl">
+        <Form className="w-full flex px-2 flex-col pt-3 pb-8 max-w-xl md:max-w-3xl bg-transparent drop-shadow-lg rounded-xl dark:text-white">
           <div className="space-y-4">
             <div className="space-y-2">
               <CustomInput
                 name="title"
-                className="border-0 text-6xl bg-transparent font-serif p-2 focus:outline-none focus:ring-0"
+                className="border-0 text-6xl bg-transparent font-serif p-2 focus:outline-none focus:ring-0 dark:bg-gray-500"
                 placeholder="Title"
               />
 
               <CustomInput
                 name="subtitle"
-                className="border-0 text-3xl bg-transparent font-serif p-2 focus:outline-none focus:ring-0"
+                className="border-0 text-3xl bg-transparent font-serif p-2 focus:outline-none focus:ring-0 dark:bg-gray-500"
                 placeholder="Subtitle"
               />
               <GroupSelect name="group" />

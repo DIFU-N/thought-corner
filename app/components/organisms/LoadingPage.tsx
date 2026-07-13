@@ -1,11 +1,11 @@
 "use client";
-import { BallTriangle } from "react-loader-spinner";
+import Image from "next/image";
 
 export default function LoadingPage() {
   return (
-    <main className="flex items-center flex-col justify-center min-h-screen bg-black z-50 relative">
+    <main className="flex items-center flex-col justify-center min-h-screen bg-white z-50 relative">
       {/* <div className="text-white">Welcome to te USO Penitentiary</div> */}
-      <BallTriangle
+      {/* <BallTriangle
         height={100}
         width={100}
         radius={5}
@@ -14,7 +14,8 @@ export default function LoadingPage() {
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
-      />
+      /> */}
+      <Image alt="" src={'/assets/tc-nobg.png'} width={200} height={200}/>
     </main>
   );
 }
