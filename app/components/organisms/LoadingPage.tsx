@@ -1,9 +1,11 @@
 "use client";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 export default function LoadingPage() {
+  const { resolvedTheme } = useTheme();
   return (
-    <main className="flex items-center flex-col justify-center min-h-screen bg-white z-50 relative">
+    <main className="flex items-center flex-col justify-center min-h-screen bg-white dark:bg-black z-50 relative">
       {/* <div className="text-white">Welcome to te USO Penitentiary</div> */}
       {/* <BallTriangle
         height={100}
@@ -15,7 +17,16 @@ export default function LoadingPage() {
         wrapperClass=""
         visible={true}
       /> */}
-      <Image alt="" src={'/assets/tc-nobg.png'} width={200} height={200}/>
+      <Image
+        alt=""
+        src={
+          resolvedTheme === "dark"
+            ? "/assets/tc-dark-nobg.png"
+            : "/assets/tc-nobg.png"
+        }
+        width={200}
+        height={200}
+      />
     </main>
   );
 }
