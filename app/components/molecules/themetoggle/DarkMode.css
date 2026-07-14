@@ -78,7 +78,7 @@
 } */
 
 
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
   .dark_mode_label {
     transform: rotate(90deg);
   }
@@ -86,4 +86,4 @@
   .dark_mode_label svg {
     transform: rotate(-90deg);
   }
-}
+} */
