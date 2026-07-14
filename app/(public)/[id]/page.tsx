@@ -53,10 +53,10 @@ export default function ThoughtPage() {
         <div className="p-4 flex justify-end w-full">
           <ThemeToggle />
         </div>
-      <div className="justify-center w-full max-w-full dark:text-white pt-32 px-[10%] md:px-[20%]">
+      <div className="justify-center w-full max-w-full text-black dark:text-white pt-32 px-[10%] md:px-[20%]">
         <div className="flex justify-between">
           <div className="mx-5 flex flex-col gap-2 mb-6">
-            <h1 className="text-4xl md:text-6xl font-serif">{thought.title}</h1>
+            <h1 className="text-4xl md:text-6xl font-serif text-black">{thought.title}</h1>
             <p className="text-md font-serif text-gray-500">
               {thought.subtitle}
             </p>
